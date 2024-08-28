@@ -2,23 +2,25 @@
 
 // Routes cho Client
 export const routes = {
-    home: "/",
-    wishlist: "/wishlist",
-    store: "/store",
-    storeDetail: "/store-detail",
-    cart: "/cart",
-    blog: "/blog",
-    blogDetail: "/blog-detail",
-    productDetail: "/product-detail",
-    profile: "/profile",
-    shop: "/shop",
-    compare: "/compare",
-    checkout: "/checkout",
-    login: "/login",
-    register: "/register",
+    // home: "/",
+    // wishlist: "/wishlist",
+    // store: "/store",
+    // storeDetail: "/store-detail",
+    // cart: "/cart",
+    // blog: "/blog",
+    // blogDetail: "/blog-detail",
+    // productDetail: "/product-detail",
+    // profile: "/profile",
+    // shop: "/shop",
+    // compare: "/compare",
+    // checkout: "/checkout",
+    // login: "/login",
+    // register: "/register",
 
     // Merchants Client
     dashboard: "/dashboard",
+    product: "/product",
+    category: "/category",
 };
 
 // Routes cho Admin

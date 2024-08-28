@@ -1,0 +1,81 @@
+@media (min-width: 768px) {
+    .menu-res-786 {
+        overflow: hidden;
+    }
+}
+
+.wrapper {
+    width: 288px;
+    box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+    position: fixed;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.dark .dark-menu {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 55 62 / var(--tw-bg-opacity));
+}
+
+.container {
+    margin-left: 12px;
+    padding-bottom: 40px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texting {
+    --tw-text-opacity: 1;
+    color: rgb(15 23 42 / var(--tw-text-opacity));
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    font-size: 26px;
+    // line-height: 1.75rem;
+    gap: 0.75rem;
+    align-items: center;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 0.75rem;
+    text-decoration: inherit;
+}
+
+
+// .wrapper::-webkit-scrollbar {
+//     width: 6px;
+// }
+// .wrapper::-webkit-scrollbar-thumb {
+//     background-color: rgb(216, 216, 216);
+//     border-radius: 40px;
+// }
+// .wrapper::-webkit-scrollbar-track {
+//     background-color: transparent;
+// }
+  
+
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper:hover::-webkit-scrollbar {
+    /* webkit-scrollbar thuộc tính */
+    width: 4px;
+    height: 10px;
+    display: block;
+}
+.wrapper::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+}
+.wrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #e3e3e4;
+}
+.wrapper::-webkit-scrollbar-thumb:hover {
+    background: #e3e3e4;
+}

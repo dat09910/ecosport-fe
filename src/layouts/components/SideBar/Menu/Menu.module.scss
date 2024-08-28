@@ -1,0 +1,50 @@
+.content {
+    margin-top: 40px;
+}
+
+.menu-nav {
+
+}
+
+.menu-label {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+    margin: 16px 12px 8px 12px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 0px 6px 16px;
+    margin: 0px 8px;
+    border-radius: 4px;
+    color: var(--text-color);
+    transition: background-color ease-in-out 200ms;
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+
+    &.active {
+        color: var(--primary);
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+// .icon,
+// .active-icon {
+//     display: flex;
+// }
+
+// .active-icon {
+//     display: none;
+// }
+
+
