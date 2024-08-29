@@ -2,7 +2,7 @@
 
 // Routes cho Client
 export const routes = {
-    // home: "/",
+    home: "/",
     // wishlist: "/wishlist",
     // store: "/store",
     // storeDetail: "/store-detail",
@@ -20,6 +20,7 @@ export const routes = {
     // Merchants Client
     dashboard: "/dashboard",
     product: "/product",
+    productAdd: "/product/add",
     category: "/category",
 };
 

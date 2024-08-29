@@ -8,9 +8,12 @@ const cx = classNames.bind(style);
 function MerchantLayout({ children }) {
     return (
         <div className={cx('wrapper')} >
-            <Slidebar />
-            <div className={cx('content')}>
-                {children}
+            <Header />
+            <div className={cx('container')}>
+                <Slidebar />
+                <div className={cx('content')}>
+                    {children}
+                </div>
             </div>
         </div>
     );

@@ -10,6 +10,11 @@
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
     margin: 16px 12px 8px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .menu-item {
@@ -33,16 +38,34 @@
 }
 
 .title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin-left: 16px;
+    margin-left: 18px;
 }
 
-// .icon,
-// .active-icon {
-//     display: flex;
-// }
+.icon-menu {
+    transition: ease-out 0.1s;
+    &.active {
+       transform: rotate(0.25turn);
+    }
+}
 
+.icon {
+}
+
+.icon,
+.active-icon {
+    display: flex;
+}
+
+.line {
+    border: 0;
+    border-bottom: 1px solid #00000033;
+    background-color: transparent;
+    margin: 12px 0px;
+    border-color: #00000019;
+    
+}
 // .active-icon {
 //     display: none;
 // }

@@ -1,38 +1,43 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Menu.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ label, data }) {
-    const [activeIndex, setActiveIndex] = useState(null);
+function MenuItem({ label, data, location }) {
+    const [activeMenu, setActiveMenu] = useState(true);
 
-    const handleItemClick = (index) => {
-        setActiveIndex(index);
+    const handleMenuActive = () => {
+        setActiveMenu(prevState => !prevState);
     };
 
     const renderMenu = () => {
         return data.map((item, index) => (
             <div key={index}>
-                <NavLink
-                    className={cx('menu-item', { active: activeIndex === index })}
+                <Link
+                    className={cx('menu-item', { active: location.pathname === item.to })} // Kiểm tra đường dẫn hiện tại để áp dụng class 'active'
                     to={item.to}
-                    onClick={() => handleItemClick(index)}
                 >
                     {item.icon && <span className={cx('icon')}>{item.icon}</span>}
                     <span className={cx('title')}>{item.name}</span>
-                </NavLink>
+                </Link>
             </div>
         ));
     };
 
     return (
         <div className={cx('menu-nav')}>
-            <p className={cx('menu-label')}>
-                {label}
+            <hr className={cx('line')} />
+            <p className={cx('menu-label')} onClick={handleMenuActive}>
+                <span>{label}</span>
+                <span className={cx('icon-menu', { active: activeMenu })}>
+                    <FontAwesomeIcon style={{ fontSize: '13px' }} icon={faChevronRight} />
+                </span>
             </p>
-            {renderMenu()}
+            {activeMenu && renderMenu()}
         </div>
     );
 }

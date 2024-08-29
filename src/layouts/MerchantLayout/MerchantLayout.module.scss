@@ -2,16 +2,16 @@
 }
 
 .container {
-    width: var(--default-layout-header-width);
-    max-width: 100%;
-    padding: 0 var(--default-layout-header-hoizontal);
-    margin-top: var(--default-layout-header-height);
-    display: flex;
+    margin-top: 60px;
+
 }
 
 .content {
-    // flex: 1;
-    // min-height: 1000px;
+    flex: 1;
+    min-height: 100vh;
     // padding-left: 360px;
-    margin-left: 288px;
+    margin-left: 335px;
+    padding-top: 16px;
+    margin-right: 62px;
+    overflow: hidden;
 }

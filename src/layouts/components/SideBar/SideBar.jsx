@@ -1,35 +1,42 @@
 import classNames from 'classnames/bind';
 import styles from './SideBar.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Menu from './Menu';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCoffee, faHome, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { LuDot } from "react-icons/lu";
+import { MdSpaceDashboard } from "react-icons/md";
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 const userMenu = [
     {
-        label: 'Quản Lý Sản Phẩm',
+        label: 'Quản Lý Đơn Hàng',
         data : [
             {
-                name: 'Tất Cả Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
+                name: 'Tất Cả',
+                icon: <LuDot />,
                 to: '/product',
             },
             {
-                name: 'Thêm Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
+                name: 'Giao Hàng Loạt',
+                icon: <LuDot />,
                 to: '/product',
             },
             {
-                name: 'Sản Phẩm Vi Phạm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                name: 'Đơn Hủy',
+                icon: <LuDot />,
+                to: '/product/add',
             },
             {
-                name: 'Cài Đặt Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                name: 'Trả Hàng/Hoàn Tiền',
+                icon: <LuDot />,
+                to: '/product/rule',
+            },
+            {
+                name: 'Cài Đặt Vận Chuyển',
+                icon: <LuDot />,
+                to: '/product/setting',
             },
         ]
     },
@@ -38,23 +45,23 @@ const userMenu = [
         data : [
             {
                 name: 'Tất Cả Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
+                icon: <LuDot />,
                 to: '/product',
             },
             {
                 name: 'Thêm Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/add',
             },
             {
                 name: 'Sản Phẩm Vi Phạm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/rule',
             },
             {
                 name: 'Cài Đặt Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/setting',
             },
         ]
     },
@@ -63,23 +70,23 @@ const userMenu = [
         data : [
             {
                 name: 'Tất Cả Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
+                icon: <LuDot />,
                 to: '/product',
             },
             {
                 name: 'Thêm Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/add',
             },
             {
                 name: 'Sản Phẩm Vi Phạm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/rule',
             },
             {
                 name: 'Cài Đặt Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/setting',
             },
         ]
     },
@@ -88,64 +95,47 @@ const userMenu = [
         data : [
             {
                 name: 'Tất Cả Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
+                icon: <LuDot />,
                 to: '/product',
             },
             {
                 name: 'Thêm Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/add',
             },
             {
                 name: 'Sản Phẩm Vi Phạm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/rule',
             },
             {
                 name: 'Cài Đặt Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
-            },
-        ]
-    },
-    {
-        label: 'Quản Lý Sản Phẩm',
-        data : [
-            {
-                name: 'Tất Cả Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
-            },
-            {
-                name: 'Thêm Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
-            },
-            {
-                name: 'Sản Phẩm Vi Phạm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
-            },
-            {
-                name: 'Cài Đặt Sản Phẩm',
-                icon: <FontAwesomeIcon icon={faCoffee}/>,
-                to: '/product',
+                icon: <LuDot />,
+                to: '/product/setting',
             },
         ]
     },
 ];
 
 function SideBar() {
+    const [activeIndex, setActiveIndex] = useState(false);
+    const location = useLocation(); // Lấy thông tin về đường dẫn hiện tại
+
+    const handleItemClick = () => {
+        setActiveIndex(true);
+    };
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <div className={cx('logo')}>
-                    <Link to="/dashboard" className={cx('texting')}>
-                        Sport Logo
+                <div className={cx('logo')} onClick={() => handleItemClick()}>
+                    <Link to="/dashboard" className={cx('texting', { active: location.pathname == '/dashboard'  })}>
+                        <span className={cx('dashboard')} ><MdSpaceDashboard /></span>
+                        Dashboard
                     </Link>
                 </div>
-                <div style={{marginTop: '40px'}}>
-                    <Menu items={userMenu} />
+                <div>
+                    <Menu items={userMenu} location={location} />
                 </div>
             </div>
         </div>

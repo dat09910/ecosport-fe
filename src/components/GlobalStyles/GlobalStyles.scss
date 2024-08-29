@@ -1,7 +1,7 @@
 @import 'normalize.css';
 
 :root {
-    --primary: #fe2c55;
+    --primary: #E22A19;
     --black: black;
     --white: white;
     --text-color: #161823;
@@ -10,7 +10,7 @@
 
     // Default layout
     --default-layout-header-height: 60px;
-    --default-layout-header-width: 1150px;
+    --default-layout-header-width: 1488px;
     --default-layout-header-hoizontal: 24px;
 }
 
@@ -60,29 +60,29 @@ a {
 }
 
 // FONTS EMBEDED
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
-//     font-weight: 400;
-// }
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
 
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
-//     font-weight: 600;
-// }
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/Proxima-Nova-Semibold.woff2');
+    font-weight: 600;
+}
 
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Bold.woff');
-//     font-weight: 700;
-// }
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
 
-// @font-face {
-//     font-family: SofiaPro;
-//     src: url('/assets/fonts/sofiapro-semibold.otf');
-//     font-weight: 700;
-// }
+@font-face {
+    font-family: SofiaPro;
+    src: url('/src/assets/fonts/sofiapro-semibold.otf');
+    font-weight: 700;
+}
 
 // CUSTOM TIPPY TOOLTIP
 body {
